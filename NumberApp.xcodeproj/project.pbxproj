@@ -13,8 +13,8 @@
 		255F34B12C806DCA0074658E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255F34AF2C806DCA0074658E /* LaunchScreen.storyboard */; };
 		255F34BD2C806E3E0074658E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F34BB2C806E3E0074658E /* HomeViewController.swift */; };
 		255F34BE2C806E3E0074658E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255F34BC2C806E3E0074658E /* HomeViewController.xib */; };
-		256A97732C80B5E200907175 /* Data.js in Resources */ = {isa = PBXBuildFile; fileRef = 256A97722C80B5E200907175 /* Data.js */; };
 		256A977B2C80BB2600907175 /* NumberConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A977A2C80BB2600907175 /* NumberConfig.swift */; };
+		256A977E2C80C62400907175 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 256A977D2C80C62400907175 /* Data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		255F34B22C806DCA0074658E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255F34BB2C806E3E0074658E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		255F34BC2C806E3E0074658E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		256A97722C80B5E200907175 /* Data.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Data.js; sourceTree = "<group>"; };
 		256A977A2C80BB2600907175 /* NumberConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberConfig.swift; sourceTree = "<group>"; };
+		256A977D2C80C62400907175 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 		256A97712C80B56A00907175 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				256A97722C80B5E200907175 /* Data.js */,
+				256A977D2C80C62400907175 /* Data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256A97732C80B5E200907175 /* Data.js in Resources */,
+				256A977E2C80C62400907175 /* Data.json in Resources */,
 				255F34B12C806DCA0074658E /* LaunchScreen.storyboard in Resources */,
 				255F34AE2C806DCA0074658E /* Assets.xcassets in Resources */,
 				255F34BE2C806E3E0074658E /* HomeViewController.xib in Resources */,
