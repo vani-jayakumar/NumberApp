@@ -10,5 +10,4 @@ import Foundation
 struct NumberDataModel {
     let number: Int
     let counts: [[[Int]]]
-    
 }
