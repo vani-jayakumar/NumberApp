@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var dataList = [NumberDataModel]()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,6 +23,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        DBManager.shared.loadData(fileName: "Data") {[weak self] numberDataModel in
+            guard let self = self else { return }
+            if let numberDataModel = numberDataModel {
+                self.dataList = numberDataModel
+                print("Loaded Data Models:")
+                for data in self.dataList {
+                    print(data)
+               }
+            } else {
+                print("Failed to load data.")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,3 +67,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+}
