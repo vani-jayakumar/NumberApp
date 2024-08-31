@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var backgroundImg: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +28,8 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction private func didTapPlay(button: UIButton) {
+        let GameVC = GameViewController(nibName: "GameViewController", bundle: nil)
+        self.navigationController?.pushViewController(GameVC , animated: true)
+    }
 }
