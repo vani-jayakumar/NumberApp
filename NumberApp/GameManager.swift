@@ -24,7 +24,6 @@ import Foundation
         return (targetNumber, count, sumArray)
     }
     
-    
     func generateRandomValues(Arraycount: Int, range: Range<Int>) -> [Int] {
         let requiredCount = 24 - numberArray.count
         guard requiredCount > 0 else { return [] }

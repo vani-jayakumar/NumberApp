@@ -51,6 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("No data found")
         }
     }
+            
 }
 
     func sceneDidDisconnect(_ scene: UIScene) {
