@@ -23,18 +23,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        DBManager.shared.loadData(fileName: "Data") {[weak self] numberDataModel in
-            guard let self = self else { return }
-            if let numberDataModel = numberDataModel {
-                self.dataList = numberDataModel
-                print("Loaded Data Models:")
-                for data in self.dataList {
-                    print(data)
-               }
-            } else {
-                print("Failed to load data.")
+//        DBManager.shared.loadData(fileName: "Data") {[weak self] numberDataModel in
+//            guard let self = self else { return }
+//            if let numberDataModel = numberDataModel {
+//                self.dataList = numberDataModel
+//                print("Loaded Data Models:")
+//                for data in self.dataList {
+//                    print(data)
+//               }
+//            } else {
+//                print("Failed to load data.")
+//        }
+//    }
+        
+        DBManager.shared.loadData(fileName: "Data") { data in
+        if let data = data {
+        let gameManager = GameManager()
+        if let (targetNumber, count, sumArray) = gameManager.getValues(from: data) {
+            print("Target Number: \(targetNumber)")
+            print("Count: \(count)")
+            print("Sum Array: \(sumArray)")
+            
+            let randomValues = gameManager.generateRandomValues(Arraycount: 24, range: 50..<176)
+            print("Random Values: \(randomValues)")
+            print("Combined Number Array: \(gameManager.numberArray)")
+        } else {
+            print("No data found")
         }
     }
+}
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
