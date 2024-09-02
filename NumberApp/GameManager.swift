@@ -12,7 +12,6 @@ import Foundation
     var numberArray: [Int] = []
     
     func getValues(from data: [NumberDataModel]) -> (Int, Int, [Int])? {
-        guard !data.isEmpty else { return nil }
         let randomModel = data.randomElement()!
         let targetNumber = randomModel.number
         let randomCount = randomModel.counts.randomElement()!
@@ -26,10 +25,15 @@ import Foundation
     
     func generateRandomValues(Arraycount: Int, range: Range<Int>) -> [Int] {
         let requiredCount = 24 - numberArray.count
-        guard requiredCount > 0 else { return [] }
+        var randomValues: [Int] = []
                 
-        let randomValues = (0..<requiredCount).map { _ in Int.random(in: range) }
-        numberArray.append(contentsOf: randomValues)
-            return randomValues
+        while randomValues.count < requiredCount {
+            let randomValue = Int.random(in: range)
+            if !numberArray.contains(randomValue) && !randomValues.contains(randomValue) {
+                randomValues.append(randomValue)
+            }
         }
+            numberArray.append(contentsOf: randomValues)
+            return randomValues
     }
+}
