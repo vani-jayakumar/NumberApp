@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     private var arrayEndRange = 0
     private var arrayStartRange = 0
     private var numArray = [Int]()
+    private var sumNumArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,17 @@ class GameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    private func result(array: Array<Int>) -> Bool {
+        var sum = 0
+        for item in array {
+            sum += item
+        }
+        if sum == arrayEndRange {
+            return true
+        } else {
+            return false
+        }
+    }
      
 }
 extension GameViewController: UICollectionViewDataSource {
@@ -71,13 +82,20 @@ extension GameViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == sumCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SumCell", for: indexPath) as? SumCollectionViewCell else { return UICollectionViewCell()}
-            return cell
-        } else {
+        if collectionView == numCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumCell", for: indexPath) as? NumberCollectionViewCell else { return UICollectionViewCell()}
             cell.numLabel.text = String(numArray[indexPath.item])
             return cell
+            
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SumCell", for: indexPath) as? SumCollectionViewCell else { return UICollectionViewCell()}
+            if indexPath.item < sumNumArray.count {
+                cell.sumLabel.text = String(sumNumArray[indexPath.item])
+            } else {
+                cell.sumLabel.text = ""
+            }
+                    
+          return cell
         }
     }
     
@@ -94,5 +112,30 @@ extension GameViewController: UICollectionViewDelegate , UICollectionViewDelegat
         return 5
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == numCollectionView {
+            let selectedNum = numArray[indexPath.item]
+            if sumNumArray.contains(selectedNum) {
+                let alert = UIAlertController(title: "Alert!", message: "Please select a different number", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            if sumNumArray.count < sumViewItemCount && !sumNumArray.contains(selectedNum){
+                sumNumArray.append(selectedNum)
+                sumCollectionView.reloadData()
+                
+            }
+            if sumNumArray.count == sumViewItemCount {
+                if result(array: sumNumArray) {
+                    let successVC = SuccessViewController()
+                    self.navigationController?.pushViewController(successVC, animated: true)
+                }
+                if !result(array: sumNumArray) {
+                    let failVC = FailedViewController()
+                    self.navigationController?.pushViewController(failVC, animated: true)
+                }
+            }
+        }
+    }
     
 }
