@@ -14,7 +14,15 @@
 		255F34B12C806DCA0074658E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255F34AF2C806DCA0074658E /* LaunchScreen.storyboard */; };
 		255F34BD2C806E3E0074658E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F34BB2C806E3E0074658E /* HomeViewController.swift */; };
 		255F34BE2C806E3E0074658E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255F34BC2C806E3E0074658E /* HomeViewController.xib */; };
-		256A977B2C80BB2600907175 /* NumberConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A977A2C80BB2600907175 /* NumberConfig.swift */; };
+		255FF9FA2C87467200165007 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FF9F82C87467200165007 /* LevelViewController.swift */; };
+		255FF9FB2C87467200165007 /* LevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255FF9F92C87467200165007 /* LevelViewController.xib */; };
+		25610C0C2C883917008474A3 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25610C0B2C883917008474A3 /* GameViewModel.swift */; };
+		256456DD2C81D7CE00CD6072 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256456DB2C81D7CE00CD6072 /* GameViewController.swift */; };
+		256456DE2C81D7CE00CD6072 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256456DC2C81D7CE00CD6072 /* GameViewController.xib */; };
+		256456EC2C82FF9A00CD6072 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256456EB2C82FF9A00CD6072 /* GameManager.swift */; };
+		256456F82C8304C200CD6072 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256456F62C8304C200CD6072 /* NumberCollectionViewCell.swift */; };
+		256456F92C8304C200CD6072 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256456F72C8304C200CD6072 /* NumberCollectionViewCell.xib */; };
+		256457042C8315F200CD6072 /* XIB Files in Resources */ = {isa = PBXBuildFile; fileRef = 256457032C8315F100CD6072 /* XIB Files */; };
 		256A977E2C80C62400907175 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 256A977D2C80C62400907175 /* Data.json */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +36,15 @@
 		255F34B22C806DCA0074658E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255F34BB2C806E3E0074658E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		255F34BC2C806E3E0074658E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		256A977A2C80BB2600907175 /* NumberConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberConfig.swift; sourceTree = "<group>"; };
+		255FF9F82C87467200165007 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		255FF9F92C87467200165007 /* LevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelViewController.xib; sourceTree = "<group>"; };
+		25610C0B2C883917008474A3 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		256456DB2C81D7CE00CD6072 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		256456DC2C81D7CE00CD6072 /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		256456EB2C82FF9A00CD6072 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		256456F62C8304C200CD6072 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		256456F72C8304C200CD6072 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
+		256457032C8315F100CD6072 /* XIB Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "XIB Files"; path = "../../XIB Files"; sourceTree = "<group>"; };
 		256A977D2C80C62400907175 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +62,7 @@
 		255F34982C806DC50074658E = {
 			isa = PBXGroup;
 			children = (
+				256457032C8315F100CD6072 /* XIB Files */,
 				255F34A32C806DC50074658E /* NumberApp */,
 				255F34A22C806DC50074658E /* Products */,
 			);
@@ -68,12 +85,43 @@
 				255F34AD2C806DCA0074658E /* Assets.xcassets */,
 				255F34AF2C806DCA0074658E /* LaunchScreen.storyboard */,
 				255F34B22C806DCA0074658E /* Info.plist */,
-				255F34BB2C806E3E0074658E /* HomeViewController.swift */,
-				255F34BC2C806E3E0074658E /* HomeViewController.xib */,
-				256A977A2C80BB2600907175 /* NumberConfig.swift */,
-				255DCE6F2C8199B50051A328 /* DBManager.swift */,
+				25610C122C8839D4008474A3 /* Models */,
+				25610C112C88397E008474A3 /* Controllers */,
+				25610C132C8839EF008474A3 /* ViewModels */,
 			);
 			path = NumberApp;
+			sourceTree = "<group>";
+		};
+		25610C112C88397E008474A3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				255F34BB2C806E3E0074658E /* HomeViewController.swift */,
+				255F34BC2C806E3E0074658E /* HomeViewController.xib */,
+				256456DB2C81D7CE00CD6072 /* GameViewController.swift */,
+				256456DC2C81D7CE00CD6072 /* GameViewController.xib */,
+				255FF9F82C87467200165007 /* LevelViewController.swift */,
+				255FF9F92C87467200165007 /* LevelViewController.xib */,
+				256456F62C8304C200CD6072 /* NumberCollectionViewCell.swift */,
+				256456F72C8304C200CD6072 /* NumberCollectionViewCell.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		25610C122C8839D4008474A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				255DCE6F2C8199B50051A328 /* DBManager.swift */,
+				256456EB2C82FF9A00CD6072 /* GameManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		25610C132C8839EF008474A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				25610C0B2C883917008474A3 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		256A97712C80B56A00907175 /* Resources */ = {
@@ -142,9 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				256A977E2C80C62400907175 /* Data.json in Resources */,
+				256457042C8315F200CD6072 /* XIB Files in Resources */,
+				255FF9FB2C87467200165007 /* LevelViewController.xib in Resources */,
 				255F34B12C806DCA0074658E /* LaunchScreen.storyboard in Resources */,
 				255F34AE2C806DCA0074658E /* Assets.xcassets in Resources */,
 				255F34BE2C806E3E0074658E /* HomeViewController.xib in Resources */,
+				256456DE2C81D7CE00CD6072 /* GameViewController.xib in Resources */,
+				256456F92C8304C200CD6072 /* NumberCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +208,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				255DCE702C8199B50051A328 /* DBManager.swift in Sources */,
-				256A977B2C80BB2600907175 /* NumberConfig.swift in Sources */,
+				256456EC2C82FF9A00CD6072 /* GameManager.swift in Sources */,
 				255F34A52C806DC50074658E /* AppDelegate.swift in Sources */,
+				255FF9FA2C87467200165007 /* LevelViewController.swift in Sources */,
+				256456F82C8304C200CD6072 /* NumberCollectionViewCell.swift in Sources */,
 				255F34A72C806DC50074658E /* SceneDelegate.swift in Sources */,
+				256456DD2C81D7CE00CD6072 /* GameViewController.swift in Sources */,
+				25610C0C2C883917008474A3 /* GameViewModel.swift in Sources */,
 				255F34BD2C806E3E0074658E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

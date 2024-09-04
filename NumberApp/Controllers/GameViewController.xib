@@ -12,7 +12,7 @@
                 <outlet property="backgroundImg" destination="a7f-s4-Xl9" id="0Wd-EX-Gqg"/>
                 <outlet property="countNumLabel" destination="A6D-XT-DXg" id="THS-7C-236"/>
                 <outlet property="numCollectionView" destination="GA8-eK-6XM" id="B6R-bx-hPR"/>
-                <outlet property="sumCollectionView" destination="lqe-fL-T5O" id="Evu-fz-Kkb"/>
+                <outlet property="sumLabel" destination="WM6-t6-7hG" id="v1R-8m-8Nq"/>
                 <outlet property="targetNumLabel" destination="w45-xQ-UkK" id="opz-mZ-rOU"/>
                 <outlet property="timerLabel" destination="Eup-BL-zUp" id="X0K-Je-Ytb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,23 +38,6 @@
                     <nil key="textColor"/>
                     <color key="shadowColor" red="1" green="0.94754753950000004" blue="0.80167211319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-fL-T5O">
-                    <rect key="frame" x="10" y="698" width="394" height="128"/>
-                    <color key="backgroundColor" red="0.60825301070000004" green="0.93494272810000001" blue="1" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="NPE-K7-wK5"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9gF-Ew-js8">
-                        <size key="itemSize" width="100" height="100"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                    </collectionViewFlowLayout>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Wf6-uy-WS1"/>
-                        <outlet property="delegate" destination="-1" id="zGO-MK-Hxe"/>
-                    </connections>
-                </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-BL-zUp">
                     <rect key="frame" x="186" y="130" width="44" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -78,26 +61,31 @@
                         <outlet property="delegate" destination="-1" id="qyv-0R-lUb"/>
                     </connections>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sumLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM6-t6-7hG">
+                    <rect key="frame" x="170" y="768" width="74" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="lqe-fL-T5O" firstAttribute="top" secondItem="GA8-eK-6XM" secondAttribute="bottom" constant="30" id="Bux-cK-Me5"/>
                 <constraint firstItem="GA8-eK-6XM" firstAttribute="top" secondItem="A6D-XT-DXg" secondAttribute="bottom" constant="46" id="EpV-jc-tov"/>
                 <constraint firstItem="Eup-BL-zUp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="186" id="Jb5-RM-uQ8"/>
                 <constraint firstAttribute="bottom" secondItem="a7f-s4-Xl9" secondAttribute="bottom" id="Jff-x4-Agr"/>
                 <constraint firstAttribute="trailing" secondItem="a7f-s4-Xl9" secondAttribute="trailing" id="KrE-O1-OH8"/>
                 <constraint firstItem="w45-xQ-UkK" firstAttribute="top" secondItem="Eup-BL-zUp" secondAttribute="bottom" constant="29.5" id="NBW-yy-HLc"/>
                 <constraint firstItem="A6D-XT-DXg" firstAttribute="top" secondItem="w45-xQ-UkK" secondAttribute="bottom" constant="50" id="QHA-Ud-ZPh"/>
-                <constraint firstItem="lqe-fL-T5O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="T5h-kP-osG"/>
                 <constraint firstItem="w45-xQ-UkK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UzN-BW-u7b"/>
+                <constraint firstItem="WM6-t6-7hG" firstAttribute="top" secondItem="GA8-eK-6XM" secondAttribute="bottom" constant="100" id="VR6-9d-7QH"/>
                 <constraint firstItem="A6D-XT-DXg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dxL-22-XVr"/>
                 <constraint firstItem="GA8-eK-6XM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hJl-7v-HQ1"/>
                 <constraint firstAttribute="trailing" secondItem="GA8-eK-6XM" secondAttribute="trailing" constant="10" id="lMJ-HN-RbW"/>
                 <constraint firstItem="a7f-s4-Xl9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ozz-6H-iBb"/>
                 <constraint firstItem="Eup-BL-zUp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="qln-g9-qqy"/>
+                <constraint firstItem="WM6-t6-7hG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uFN-aa-4g4"/>
                 <constraint firstItem="a7f-s4-Xl9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xS1-yI-Tif"/>
                 <constraint firstItem="GA8-eK-6XM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xq5-6h-pFA"/>
-                <constraint firstItem="lqe-fL-T5O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zQz-4T-w23"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="76.339285714285708"/>
         </view>

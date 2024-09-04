@@ -23,8 +23,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        
+//        DBManager.shared.loadData(fileName: "Data") { data in
+//         if let data = data {
+//            let gameManager = GameManager()
+//            if let (targetNumber, sumArray) = gameManager.getValues(from: data) {
+//            print("\(targetNumber)")
+//            print("\(sumArray)")
+//           }
+//            gameManager.generateRandomValues(Arraycount: 24, range: )
+//        }
+//    }
+      
 
-
+    }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -53,7 +65,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
-}
 
 }
