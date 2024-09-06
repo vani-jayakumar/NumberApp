@@ -15,23 +15,17 @@ class LevelViewController: UIViewController {
     @IBOutlet weak var fourthLevelButton: UIButton!
     
     var levelValue: String = ""
+    var unlockedLevel: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateLevelButtons()
         // Do any additional setup after loading the view.
     }
+    
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     @IBAction private func didTapFirstLevel(button: UIButton){
         levelValue = "two"
         navigateToGameVc()
@@ -52,6 +46,29 @@ class LevelViewController: UIViewController {
     private func navigateToGameVc() {
         let gameVC = GameViewController(nibName: "GameViewController", bundle: nil)
         gameVC.gameViewModel.levelCount = levelValue
+       
+        gameVC.levelCompletionHandler = { [weak self] in
+            self?.unlockNextLevel()
+                }
+        
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
+    
+    private func unlockNextLevel() {
+        if unlockedLevel < 4 {
+           unlockedLevel += 1
+           updateLevelButtons()
+        }
+    }
+    private func updateLevelButtons() {
+            firstLevelButton.isEnabled = unlockedLevel >= 1
+            secondLevelButton.isEnabled = unlockedLevel >= 2
+            thirdLevelButton.isEnabled = unlockedLevel >= 3
+            fourthLevelButton.isEnabled = unlockedLevel >= 4
+    
+            firstLevelButton.backgroundColor = firstLevelButton.isEnabled ? .white : .lightGray
+            secondLevelButton.backgroundColor = secondLevelButton.isEnabled ? .white : .lightGray
+            thirdLevelButton.backgroundColor = thirdLevelButton.isEnabled ? .white : .lightGray
+            fourthLevelButton.backgroundColor = fourthLevelButton.isEnabled ? .white : .lightGray
+        }
 }

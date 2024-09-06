@@ -17,27 +17,19 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="numberbg5" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-0N-Vgh">
+                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="numberbg5" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-0N-Vgh">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-Fj-60r">
-                    <rect key="frame" x="160.5" y="437" width="93" height="48"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <state key="normal" title="Level 4">
-                        <color key="titleColor" red="0.039855647209999998" green="0.0" blue="0.035441203070000003" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="didTapFourthLevelWithButton:" destination="-1" eventType="touchUpInside" id="T6I-7a-u19"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBT-vU-LPb">
-                    <rect key="frame" x="160.5" y="335" width="93" height="48"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBT-vU-LPb">
+                    <rect key="frame" x="122" y="343" width="170" height="48"/>
+                    <color key="backgroundColor" red="0.83422340809999995" green="0.96283296200000001" blue="1" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="dAE-rq-yha"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <state key="normal" title="Level 3">
                         <color key="titleColor" red="0.039855647209999998" green="0.0" blue="0.035441203070000003" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,9 +38,12 @@
                         <action selector="didTapThirdLevelWithButton:" destination="-1" eventType="touchUpInside" id="1Af-pf-M08"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-yP-EFB">
-                    <rect key="frame" x="163" y="161" width="88" height="48"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-yP-EFB">
+                    <rect key="frame" x="122" y="147" width="170" height="48"/>
+                    <color key="backgroundColor" red="0.83422340809999995" green="0.96283296200000001" blue="1" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="UUt-I7-KQN"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <state key="normal" title="Level 1">
                         <color key="titleColor" red="0.039855647209999998" green="0.0" blue="0.035441203070000003" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,9 +52,12 @@
                         <action selector="didTapFirstLevelWithButton:" destination="-1" eventType="touchUpInside" id="pVF-bl-0tc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgB-de-AyL">
-                    <rect key="frame" x="161" y="251" width="92" height="48"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgB-de-AyL">
+                    <rect key="frame" x="122" y="245" width="170" height="48"/>
+                    <color key="backgroundColor" red="0.83422340809999995" green="0.96283296200000001" blue="1" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="3bJ-jJ-o9Y"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <state key="normal" title="Level 2">
                         <color key="titleColor" red="0.039855647209999998" green="0.0" blue="0.035441203070000003" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,21 +66,35 @@
                         <action selector="didTapSecondLevelWithButton:" destination="-1" eventType="touchUpInside" id="MRY-yE-Soq"/>
                     </connections>
                 </button>
+                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-Fj-60r">
+                    <rect key="frame" x="122" y="441" width="170" height="48"/>
+                    <color key="backgroundColor" red="0.83422340809999995" green="0.96283296200000001" blue="1" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="ly5-DF-0sg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="Level 4">
+                        <color key="titleColor" red="0.039855647209999998" green="0.0" blue="0.035441203070000003" alpha="0.97926476880000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapFourthLevelWithButton:" destination="-1" eventType="touchUpInside" id="T6I-7a-u19"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BgB-de-AyL" firstAttribute="top" secondItem="hfJ-yP-EFB" secondAttribute="bottom" constant="42" id="32N-2f-t51"/>
-                <constraint firstItem="hfJ-yP-EFB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="161" id="3be-al-FrH"/>
                 <constraint firstItem="1wF-0N-Vgh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4gR-m6-uDD"/>
+                <constraint firstItem="EBT-vU-LPb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="62W-SU-tLb"/>
                 <constraint firstAttribute="trailing" secondItem="1wF-0N-Vgh" secondAttribute="trailing" id="7Ug-kh-dtP"/>
-                <constraint firstItem="hfJ-yP-EFB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7fR-WU-Z3K"/>
-                <constraint firstItem="W6W-Fj-60r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bfd-5A-nFk"/>
-                <constraint firstItem="W6W-Fj-60r" firstAttribute="top" secondItem="EBT-vU-LPb" secondAttribute="bottom" constant="54" id="HOW-Gp-Z5h"/>
+                <constraint firstItem="hfJ-yP-EFB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="147" id="EUJ-ab-nDz"/>
+                <constraint firstItem="W6W-Fj-60r" firstAttribute="top" secondItem="EBT-vU-LPb" secondAttribute="bottom" constant="50" id="EwR-GA-vom"/>
+                <constraint firstItem="EBT-vU-LPb" firstAttribute="top" secondItem="BgB-de-AyL" secondAttribute="bottom" constant="50" id="IbM-Wy-Q5T"/>
                 <constraint firstItem="1wF-0N-Vgh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LJR-gH-WTh"/>
-                <constraint firstItem="EBT-vU-LPb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N7K-5k-Nht"/>
                 <constraint firstAttribute="bottom" secondItem="1wF-0N-Vgh" secondAttribute="bottom" id="SAK-fs-rdN"/>
-                <constraint firstItem="BgB-de-AyL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vxx-0g-yQn"/>
-                <constraint firstItem="W6W-Fj-60r" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="437" id="ybv-fk-zN8"/>
+                <constraint firstItem="hfJ-yP-EFB" firstAttribute="centerX" secondItem="1wF-0N-Vgh" secondAttribute="centerX" id="pbm-Nb-sWU"/>
+                <constraint firstItem="BgB-de-AyL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uIc-bc-7UW"/>
+                <constraint firstItem="BgB-de-AyL" firstAttribute="top" secondItem="hfJ-yP-EFB" secondAttribute="bottom" constant="50" id="wH2-LR-ueT"/>
+                <constraint firstItem="W6W-Fj-60r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xNG-dN-Uwc"/>
             </constraints>
             <point key="canvasLocation" x="69.565217391304358" y="52.901785714285715"/>
         </view>

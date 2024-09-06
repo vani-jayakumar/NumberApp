@@ -17,6 +17,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var sumLabel: UILabel!
     
     var gameViewModel = GameViewModel()
+    var levelCompletionHandler: (() -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +26,55 @@ class GameViewController: UIViewController {
         let nib2 = UINib(nibName: "NumberCollectionViewCell", bundle: nil)
         numCollectionView.register(nib2, forCellWithReuseIdentifier: "NumCell")
         
+        gameViewModel.delegate = self
         gameViewModel.fetchDetails()
         
         targetNumLabel.text = gameViewModel.targetnumLabel
         countNumLabel.text = gameViewModel.countnumLabel
         sumLabel.text = ""
+   }
 }
-
     
-}
+extension GameViewController: GameViewModelDelegate {
+    
+    
+    func didUpdateTargetNum(_ targetNum: String) {
+        targetNumLabel.text = targetNum
+    }
+    
+    func didUpdateCountNum(_ countNum: String) {
+        countNumLabel.text = countNum
+    }
+    
+    func didUpdateSumValues(_ sumText: String) {
+        sumLabel.text = sumText
+    }
+    
+    func didUpdateResult(_ result: Bool) {
+        if gameViewModel.sumValues.count == gameViewModel.sumViewItemCount {
+        if result {
+            let successAlert = UIAlertController(title: "Congratulations!", message:"Completed the level" , preferredStyle: .alert)
+            let playAgainAction = UIAlertAction(title: "Play Again", style: .default) {_ in
+                self.levelCompletionHandler?() 
+            self.navigationController?.popViewController(animated: true)
+            }
+            successAlert.addAction(playAgainAction)
+            self.present(successAlert, animated: true, completion: nil)
+
+        } else {
+            let failAlert = UIAlertController(title: "Oops!", message:"You are almost there" , preferredStyle: .alert)
+            let tryAgainAction = UIAlertAction(title: "Try Again", style: .default) {_ in
+            self.navigationController?.popViewController(animated: true)
+            }
+            failAlert.addAction(tryAgainAction)
+            self.present(failAlert, animated: true, completion: nil)
+
+        }
+        }
+    }
+    
+        
+    }
 extension GameViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return 24
@@ -62,19 +104,9 @@ extension GameViewController: UICollectionViewDelegate , UICollectionViewDelegat
         cell?.layer.borderWidth = 2.0
         cell?.layer.borderColor = UIColor.green.cgColor
         }
-        let sumValueText = gameViewModel.getSumValues(index: indexPath.item)
-        sumLabel.text = sumValueText
+        gameViewModel.getSumValues(index: indexPath.item)
         if gameViewModel.sumValues.count == gameViewModel.sumViewItemCount {
-        if gameViewModel.result() {
-            let successAlert = UIAlertController(title: "Congratulations!", message:"Completed the level" , preferredStyle: .alert)
-            successAlert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
-            self.present(successAlert, animated: true, completion: nil)
-        }
-        if !gameViewModel.result() {
-            let failAlert = UIAlertController(title: "Oops!", message:"You are almost there" , preferredStyle: .alert)
-            failAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
-            self.present(failAlert, animated: true, completion: nil)
-        }
+           gameViewModel.result()
         }
     }
 }
