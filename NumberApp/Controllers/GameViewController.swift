@@ -32,10 +32,24 @@ class GameViewController: UIViewController {
         targetNumLabel.text = gameViewModel.targetnumLabel
         countNumLabel.text = gameViewModel.countnumLabel
         sumLabel.text = ""
+        gameViewModel.startTimer()
    }
 }
     
 extension GameViewController: GameViewModelDelegate {
+    func didUpdateTimer( time: Int) {
+        timerLabel.text = "Time: \(time)"
+    }
+    
+    func didEndTimer() {
+        let timeAlert = UIAlertController(title: "Time's Up!", message:"You are almost there" , preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: .default) {_ in
+        self.navigationController?.popViewController(animated: true)
+        }
+        timeAlert.addAction(tryAgainAction)
+        self.present(timeAlert, animated: true, completion: nil)
+    }
+    
     
     
     func didUpdateTargetNum(_ targetNum: String) {

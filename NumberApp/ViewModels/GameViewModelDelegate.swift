@@ -13,5 +13,7 @@ protocol GameViewModelDelegate: AnyObject {
     func didUpdateCountNum(_ countNum: String)
     func didUpdateSumValues(_ sumText: String)
     func didUpdateResult(_ result: Bool)
+    func didUpdateTimer(time: Int)
+    func didEndTimer()
     
 }

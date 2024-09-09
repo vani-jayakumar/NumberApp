@@ -16,6 +16,8 @@ class GameViewModel {
     private var realSumArray: [Int] = []
     private var sum = 0
     var levelCount: String = ""
+    private var remainingTime = 60
+    private var timer: Timer?
     
     func fetchDetails() {
         guard let (targetnumber, sumArray, SumArrayCount) = gameManager.getValues(from: gameManager.numberData, level: levelCount) else {
@@ -60,6 +62,23 @@ class GameViewModel {
         delegate?.didUpdateResult(isSuccess)
     }
     
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
     
+    func endTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    @objc private func updateTime() {
+        if remainingTime > 0 {
+            remainingTime -= 1
+            delegate?.didUpdateTimer(time:remainingTime)
+        } else {
+            endTimer()
+            delegate?.didEndTimer()
+            
+        }
+    }
 }
 
